@@ -1,0 +1,19 @@
+@mixin media($breakpoints) {
+  @if $breakpoints==laptop {
+    @media (max-width: 1400px) {
+      @content;
+    }
+  }
+
+  @if $breakpoints==tablet {
+    @media only screen and (max-width: 992px) {
+      @content;
+    }
+  }
+
+  @if $breakpoints==mobiles {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+}

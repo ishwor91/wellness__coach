@@ -1,0 +1,338 @@
+h1 {
+  font-size: 40px;
+  font-family: var(--didact);
+  line-height: 1.5em;
+
+  font-weight: 400;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h2 {
+  display: inline-block;
+  position: relative;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 1.5em;
+  align-items: center;
+  z-index: 2;
+
+  @include media (tablet) {
+    font-size: 26px;
+  }
+
+
+}
+
+.title {
+  display: flex;
+  gap: 54px;
+  align-items: center;
+
+  .line {
+    color: rgb(185, 184, 184);
+  }
+}
+
+// font size 
+h3 {
+  font-size: 30px;
+  font-weight: 400;
+
+  @include media (tablet) {
+    font-size: 22px;
+
+  }
+
+}
+
+// swiper js  style 
+.swiper-button-next,
+.swiper-button-prev {
+  width: 50px;
+  height: 8px;
+  height: 100%;
+  top: 0;
+  object-fit: contain;
+}
+
+.swiper-pagination-bullet {
+  position: relative;
+  top: 10px;
+  height: 90px;
+  opacity: 1;
+  height: 10px;
+  text-align: center;
+  border-radius: 0px;
+  margin-left: 5px;
+  color: transparent;
+  width: 10px;
+  transform: rotate(45deg);
+  background-color: #c4eee0;
+  cursor: pointer;
+  z-index: 999;
+
+  &-active {
+    background: var(--primary-clr);
+  }
+
+}
+
+// pagination 
+.swiper-pagination-custom {
+  position: absolute;
+  display: inline-block;
+  bottom: 20px;
+  left: 0;
+  height: 8px;
+  width: 8px;
+  transform: rotate(45deg);
+  background-color: var(--primary-clr);
+
+}
+
+// swiper js  style  end
+
+h4 {
+  font-size: 24px;
+  font-weight: 400;
+
+  @include media (tablet) {
+    font-size: 18px;
+  }
+
+}
+
+h5 {
+  font-size: 19px;
+  font-weight: 400;
+
+}
+
+// container and section 
+.container {
+  max-width: 1620px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+
+  @include media(laptop) {
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include media(tablet) {
+    max-width: 992px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include media(mobiles) {
+    max-width: 768px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+body {
+  font-family: "roboto slab";
+}
+
+section {
+  padding: 120px 0;
+
+  @include media(tablet) {
+    padding: 0 0 60px 0;
+  }
+}
+
+// btn 
+.btn {
+  border: 1px solid transparent;
+  padding: 5px 15px;
+  background: transparent;
+  font-family: var(--roboto);
+  cursor: pointer;
+
+  @include media(mobiles) {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.primary-btn {
+  padding: 14px 25px;
+}
+
+.roboto {
+  font-family: var(--roboto);
+}
+
+.didact {
+  font-family: var(--didact);
+}
+
+.ques {
+  font-family: var(--questrial);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.para-font {
+  line-height: 43px;
+  font-size: var(--para-font);
+  font-family: var(--questrial);
+  @include media(mobiles){
+    font-size: var(--font-sm);
+    line-height: 1.5em;
+  }
+}
+
+.bg-pink {
+  background: #FFFEF7;
+}
+
+a {
+  text-decoration: none;
+  color: var(--social-clr);
+
+  &:hover {
+    color: var(--primary-clr);
+    transition: color 0.3s ease;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.grid {
+  display: grid;
+}
+
+.blue-bg {
+  background: var(--primary-clr);
+
+  &:hover {
+    background-color: var(--yellow-clr);
+    color: var(--black);
+    transition: all 0.3s ease;
+
+  }
+}
+
+.yellow-bg {
+  background: var(--yellow-clr);
+
+  &:hover {
+    background: var(--black);
+    color: var(--white);
+    transition: all 0.3s ease;
+  }
+
+
+}
+
+@font-face {
+  font-family: "Brittany Signature";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Brittany Signature"),
+    url("https://fonts.cdnfonts.com/s/39082/BrittanySignature-LjyZ.woff") format("woff");
+}
+
+.signature {
+  font-family: "Brittany Signature";
+}
+
+.font-sm {
+  font-size: var(--font-sm);
+}
+
+img {
+  object-fit: cover;
+}
+
+.line {
+  width: 71px;
+  background: #a7a7a7;
+  height: 1px;
+  display: inline-block;
+}
+
+.arrow-btn {
+  color: var(--primary-clr);
+  display: inline-block;
+  background: none;
+  border: unset;
+  margin-bottom: 20px;
+  font-weight: 500;
+  position: relative;
+  font-size: 0.875rem;
+  padding: 0;
+
+  @include media(mobiles) {
+    display: inline-block;
+  }
+
+  &::after {
+    content: "";
+    border-bottom: 1px dotted var(--primary-clr);
+    height: 1px;
+    width: 96%;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+  }
+
+  .fa-solid {
+    position: absolute;
+    bottom: -11px;
+    right: 100%;
+
+    &:hover {
+      color: var(--primary-clr);
+    }
+  }
+
+  &:hover {
+    color: var(--yellow-clr);
+    transition: all 0.3s ease;
+  }
+  &:hover .fa-solid{
+    color: var(--primary-clr);
+    right: 0%;
+    transition: all .4s linear;
+  }
+}
+
+// swiper js 
+.mySwiper{
+  width: 100%;
+  .swiper-wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    .swiper-slide{
+      width: 100%;
+    }
+  }
+}

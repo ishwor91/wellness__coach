@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Questrial&family=Roboto+Slab:wght@400;500;600;700&display=swap');
+
+
+
+:root {
+    --primary-clr: #17BE8A;
+    --yellow-clr: #FFDF00;
+    --grey-font: #171717;
+    --clr-black: #000;
+    --social-clr: #232323;
+    --white: #fff;
+    --bg-clr: #F3FCF9;
+    --black: #000;
+    --shadow: 10px 20px 40px 50px rgba($color: #69eca8, $alpha: 0.1) inset;
+    --pink-bg: #FFFCE5;
+
+    // font family 
+    --roboto: 'roboto slab';
+    --questrial: 'questrial';
+    --didact: 'didact-gothic';
+    // font size 
+    --font-tiny: 15px;
+    --font-tiny2: 16px;
+    --font-sm: 18px;
+    --para-font: 22px;
+    --font-mmd: 24px;
+}
