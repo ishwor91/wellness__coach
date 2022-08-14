@@ -17,17 +17,23 @@
 </head>
 
 <body>
+    <!-- header  -->
     <header>
         <nav>
             <!-- top__nav -->
             <div class="top__nav ">
                 <div class="container">
-                    <div class="top__nav-container flex jc-sb">
+                    <div class="top__nav-container ">
+                      <div class="top__nav-content flex jc-sb">
                         <p>An exclusive, one-on-one coaching program for ambitious, designed to get you Real Results in
                             all
                             areas of your life in 3 short months.</p>
                         <button class="btn roboto">Take A Quiz</button>
+                      </div>
+                        <i class="fa-solid fa-times top-nav-hide"></i>
+                        <div class="fa-solid fa-caret-down top-nav-show"></div>
                     </div>
+
 
                 </div>
 
@@ -96,7 +102,7 @@
                                 </ul>
                             </div>
                             <div class="secondary__nav ">
-                                <i class="fa-solid fa-times "></i>
+                                <i class="fa-solid fa-times mobile-menu-close "></i>
                                 <ul class="secondary__nav_list">
                                     <li><a href="#">Home</a></li>
                                     <li><a href="#">About</a></li>
@@ -883,12 +889,6 @@
             </div>
         </div>
     </footer>
-
-
-
-
-
-
     <!-- ========================== //footer section ================= -->
 
 
@@ -975,12 +975,10 @@
 
 
         // footer swiper 
-
         var swiper = new Swiper(".footer-swiper", {
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
-
             },
             autoplay: {
                 delay: 3000,
@@ -991,6 +989,7 @@
                 renderBullet: function (index, className) {
                     return '<span class="' + className + '">' + (index + 1) + "</span>";
                 },
+    
             },
 
         });
@@ -1000,6 +999,7 @@
     <!-- script  -->
     <script src="script/main.js"></script>
     <script src="script/loadmore.js"></script>
+    <script src="script/script.js"></script>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>

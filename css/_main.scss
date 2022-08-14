@@ -7,12 +7,43 @@ header {
     justify-content: center;
     gap: 50px;
 
-    &-container {
+    &-content {
+      height: auto;
+      opacity: 1;
+      overflow: visible;
+      transition: all .3s ease;
       @include media(tablet) {
         justify-content: center;
         flex-direction: column;
         gap: 20px;
         align-items: center;
+      }
+
+      &.hide {
+        overflow: hidden;
+        opacity: 0;
+        height: 0;
+        transition: all .3s ease;
+
+      }
+    }
+
+    &-container {
+     
+
+      .fa-solid {
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        cursor: pointer;
+        z-index: 10;
+        font-size: 20px;
+
+      }
+
+      .fa-caret-down {
+        display: none;
+
       }
     }
 
@@ -24,6 +55,10 @@ header {
     .btn {
       background: var(--yellow-clr);
       font-size: 14px;
+      &:hover{
+        background-color: var(--clr-black);
+        color: var(--white);
+      }
     }
   }
 
@@ -280,9 +315,9 @@ header {
 
       .fa-times {
         @include media(tablet) {
-          top: -79px;
+          top: -88px;
           font-size: 20px;
-          right: -57px;
+          right: -32px;
           position: absolute;
           z-index: 999;
 
@@ -307,6 +342,7 @@ header {
 
       @include media(laptop) {
         max-width: 200px;
+        left: 0;
       }
     }
 
@@ -392,6 +428,10 @@ header {
         border: 1px dotted var(--primary-clr);
         color: var(--primary-clr);
         font-size: var(--font-tiny);
+        &:hover{
+          background-color: var(--clr-black);
+          color: var(--white);
+        }
       }
     }
   }
@@ -714,7 +754,7 @@ header {
       }
     }
 
-   
+
 
 
 
@@ -1583,21 +1623,21 @@ header {
 // <!--=================== // Blog section   =========================-->
 
 // <!-- ========================== footer section ================= -->
-
-
 .footer {
 
   // top footer 
   &__top {
     background: var(--bg-clr);
-    @include media(tablet){
+
+    @include media(tablet) {
       flex-direction: column;
     }
 
     &-container {
       padding: 120px 0;
       position: relative;
-      @include media(tablet){
+
+      @include media(tablet) {
         padding: 60px 0;
         flex-direction: column;
       }
@@ -1627,14 +1667,20 @@ header {
 
         }
       }
+
+      @include media(tablet) {
+        order: 4;
+      }
     }
 
     &-right {
+
       img {
         position: absolute;
         top: -50px;
         right: 0;
-        @include media(tablet){
+
+        @include media(tablet) {
           position: relative;
           top: 20px;
         }
@@ -1654,9 +1700,13 @@ header {
     .swiper-slide {
       display: flex;
       justify-content: center;
-      @include media(tablet){
+      overflow: hidden;
+
+
+      @include media(tablet) {
         height: 100px;
-        img{
+
+        img {
           height: 100%;
           object-fit: cover;
         }
@@ -1664,6 +1714,11 @@ header {
 
       img {
         cursor: pointer;
+        &:hover{
+          transition: all .3s ease;
+          transform: rotate(20deg)  scale(1.1);
+          z-index: -1;
+        }
       }
 
     }
@@ -1689,8 +1744,9 @@ header {
       position: absolute;
       z-index: 100;
       width: auto;
-      @include media(tablet){
-        background: rgba(0 ,0, 0, .3);
+
+      @include media(tablet) {
+        background: rgba(0, 0, 0, .3);
         color: var(--white);
         font-weight: 700;
         border: transparent;
@@ -1725,77 +1781,95 @@ header {
 
     &-container {
       justify-content: space-between;
-      @include media (tablet){
+
+      @include media (tablet) {
         align-items: flex-start;
         flex-direction: column;
+        align-items: center;
+
         gap: 30px;
-       
+
       }
     }
-    &-left{
+
+    &-left {
       height: 63px;
       position: relative;
       left: -60px;
-      @include media(tablet){
+
+      @include media(tablet) {
         left: 0;
       }
-     
-      
+
+
     }
-    &-right{
-      &-navlist{
+
+    &-right {
+      &-navlist {
         gap: 55px;
         font-size: var(--font-tiny);
         font-family: var(--roboto);
+        a{
+          text-transform: uppercase;
+        }
+
         @media (max-width:600px) {
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-        justify-content: center;
+          flex-direction: column;
+          gap: 20px;
+          justify-content: center;
         }
 
       }
     }
 
   }
-  &__copyright{
+// copyright 
+  &__copyright {
     background: var(--white);
-    &-container{
+
+    &-container {
       display: flex;
       justify-content: space-between;
-      @include media(mobiles){
+
+      @include media(mobiles) {
         flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 20px;
       }
     }
-    &-left{
-      p{
+
+    &-left {
+      p {
         font-size: var(--font-tiny);
-        &:nth-child(1){
+
+        &:nth-child(1) {
           margin-bottom: 8px;
         }
-        .btn{
-          
-            margin-left: 13px;
-            @include media(tablet){
-              display: inline-block;
-              width: auto;
-            }
-          
+
+        .btn {
+
+          margin-left: 13px;
+
+          @include media(tablet) {
+            display: inline-block;
+            width: auto;
+          }
+
         }
       }
     }
 
-    &-right{
+    &-right {
       display: flex;
       gap: 33px;
       cursor: pointer;
-      .fa-brands:hover{
+
+      .fa-brands:hover {
         color: var(--primary-clr);
       }
     }
 
   }
 }
-
-
 // <!-- ========================== // footer section ================= -->
