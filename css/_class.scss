@@ -1,8 +1,7 @@
 h1 {
   font-size: 40px;
   font-family: var(--didact);
-  line-height: 1.5em;
-
+  line-height: 1.65em;
   font-weight: 400;
 
 }
@@ -18,15 +17,14 @@ h2 {
   position: relative;
   font-size: 35px;
   font-weight: 400;
-  line-height: 1.5em;
+  line-height: 1.657em;
+  font-family: var(--roboto);
   align-items: center;
   z-index: 2;
 
   @include media (tablet) {
     font-size: 26px;
   }
-
-
 }
 
 .title {
@@ -43,7 +41,7 @@ h2 {
 h3 {
   font-size: 30px;
   font-weight: 400;
-
+  line-height: 1.9333em;
   @include media (tablet) {
     font-size: 22px;
 
@@ -56,9 +54,8 @@ h3 {
 .swiper-button-prev {
   width: 50px;
   height: 8px;
-  height: 100%;
-  top: 0;
   object-fit: contain;
+  background: transparent;
 }
 
 .swiper-pagination-bullet {
@@ -116,16 +113,12 @@ h5 {
 
 // container and section 
 .container {
-  max-width: 1620px;
+  max-width: 1200px;
   margin: 0 auto;
   width: 100%;
   padding: 0 15px;
 
-  @include media(laptop) {
-    max-width: 1170px;
-    width: 100%;
-    margin: 0 auto;
-  }
+ 
 
   @include media(tablet) {
     max-width: 992px;
@@ -139,17 +132,27 @@ h5 {
     margin: 0 auto;
   }
 }
-
+.container-fluid{
+  max-width: 1650px;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+  // @include media(laptop){
+  //   max-width: 1170px;
+  // }
+ 
+}
 body {
   font-family: "roboto slab";
   background: var(--white);
+  background-color: var(--white);
 }
 
 section {
   padding: 120px 0;
 
   @include media(tablet) {
-    padding: 0 0 60px 0;
+    padding: 60px 0 60px 0;
   }
 }
 
@@ -165,6 +168,9 @@ section {
     display: block;
     width: 100%;
     text-align: center;
+  }
+  @media (max-width:400px) {
+    font-size: 14px;
   }
 }
 
@@ -194,7 +200,7 @@ section {
 }
 
 .para-font {
-  line-height: 43px;
+  line-height: 1.955em;
   font-size: var(--para-font);
   font-family: var(--questrial);
   @include media(mobiles){
@@ -231,6 +237,9 @@ img {
 
 .blue-bg {
   background: var(--primary-clr);
+  color: var(--white);
+  border: 1px solid var(--white);
+  outline: 1px dotted var(--primary-clr);
 
   &:hover {
     background-color: var(--yellow-clr);
@@ -242,6 +251,9 @@ img {
 
 .yellow-bg {
   background: var(--yellow-clr);
+  color: var(--black);
+  border: 1px solid var(--white);
+  outline: 1px dotted var(--yellow-clr);
 
   &:hover {
     background: var(--black);

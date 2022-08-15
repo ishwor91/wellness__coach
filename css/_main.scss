@@ -1,6 +1,17 @@
 // <!--===================  header section   =========================-->
 
+
+.scrollDown header {
+  transform: translateY(-200%);
+  transition: all .4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.scrollUp header{
+  transform: translateY(0);
+
+}
+
 header {
+
   .top__nav {
     padding: 10px 0;
     background: var(--primary-clr);
@@ -12,6 +23,7 @@ header {
       opacity: 1;
       overflow: visible;
       transition: all .3s ease;
+
       @include media(tablet) {
         justify-content: center;
         flex-direction: column;
@@ -29,7 +41,7 @@ header {
     }
 
     &-container {
-     
+
 
       .fa-solid {
         position: absolute;
@@ -55,7 +67,8 @@ header {
     .btn {
       background: var(--yellow-clr);
       font-size: 14px;
-      &:hover{
+
+      &:hover {
         background-color: var(--clr-black);
         color: var(--white);
       }
@@ -175,9 +188,7 @@ header {
           z-index: 100;
 
           @include media(tablet) {
-            display: none;
-            // position: absolute;
-            // right: 30px;
+            // display: none;
           }
         }
       }
@@ -192,7 +203,7 @@ header {
 
   // bottom nav 
   .bottom__nav {
-    padding: 30px 0;
+    padding: 24px 0 36px 0;
     background: var(--white);
 
     @include media(tablet) {
@@ -214,6 +225,8 @@ header {
       }
     }
 
+
+
     @include media(tablet) {
       // padding: 20px 0;
     }
@@ -223,6 +236,12 @@ header {
         padding: 10px 0;
         gap: 20px;
       }
+    }
+    .booking-btn-mobile{
+      @media (min-width:992px) {
+        display: none;
+      }
+      margin-top: 30px;
     }
 
     .nav_container {
@@ -263,6 +282,7 @@ header {
         padding-top: 100px;
         z-index: 200;
       }
+     
     }
 
     .secondary__nav {
@@ -292,11 +312,11 @@ header {
         }
 
         &_list {
+          flex-wrap: wrap;
           display: grid;
           gap: 40px;
 
           a {
-            // color: var(--white);
             display: block;
             padding: 15px;
             border-bottom: 0.5px dotted var(--social-clr);
@@ -336,14 +356,16 @@ header {
     }
 
     .logo {
-      max-height: 65px;
+      max-height: 63px;
       position: relative;
-      left: -60px;
-
+      img{
+        height: 63px;
+        
       @include media(laptop) {
-        max-width: 200px;
-        left: 0;
+        height: 50px;
       }
+      }
+
     }
 
     .mobile-menu {
@@ -357,7 +379,8 @@ header {
 
     &-list ul {
       position: relative;
-
+      gap: 50px;
+      flex-wrap: wrap;
       .dropdown {
         position: relative;
         overflow: hidden;
@@ -403,9 +426,6 @@ header {
           transform: rotate(180deg);
         }
       }
-
-      gap: 20px;
-
       @include media(tablet) {
         flex-direction: column;
         justify-content: center;
@@ -420,15 +440,23 @@ header {
           color: var(--primary-clr);
         }
       }
+      
     }
 
     &-right {
+      .booking-btn-desktop{
+        @media (min-width:992px) {
+          display: block;
+        }
+        display: none;
+      }
       .btn {
         padding: 13px 25px;
         border: 1px dotted var(--primary-clr);
         color: var(--primary-clr);
         font-size: var(--font-tiny);
-        &:hover{
+
+        &:hover {
           background-color: var(--clr-black);
           color: var(--white);
         }
@@ -446,50 +474,65 @@ header {
 }
 
 .hero__content {
-  grid-template-columns: repeat(13, minmax(0, 1fr));
-  height: 694px;
+  grid-template-columns: 64.25% 41.8%;
+  place-items: center;
+  // max-width: 1620px;
+  margin-left: auto;
+  margin-right: auto;
+
+  h1 {
+    line-height: 1.65em;
+  }
 
   @include media(tablet) {
+    display: block;
     height: auto;
   }
 
   &-left {
-    grid-column: 1/10;
-    grid-row: 1/2;
-    object-position: left;
+    grid-column: 1/2;
+
+    p {
+      line-height: 1.92em;
+    }
 
     img {
       height: 100%;
-      object-position: center;
     }
 
-    @include media(laptop) {
-      grid-column: 1/11;
-    }
+
+    @include media(laptop) {}
 
     @include media(tablet) {
-      grid-column: 1/14;
+      grid-column: 1/3;
+      width: 100%;
+      place-items: center;
     }
   }
 
   // right banner
   &-right {
-    display: grid;
-    place-items: center;
-    grid-column: 8/14;
-    grid-row: 1/2;
-    padding: 78px 0;
+    height: 519px;
+    max-width: 678px;
+    position: relative;
+    left: -10%;
+    margin-left: auto;
+    margin-right: auto;
 
-    @include media(laptop) {}
-
-    @include media(tablet) {
-      grid-column: 1/14;
-      grid-row: 2/3;
+    @include media (tablet) {
+      left: 0;
+      margin-top: 30px;
+      height: auto;
     }
 
     &-content {
       background: var(--white);
       padding: 75px 88px 80px 88px;
+      height: 100%;
+
+      @include media(laptop) {
+        padding: 40px;
+      }
 
       @media (max-width:500px) {
         padding: 20px;
@@ -510,19 +553,29 @@ header {
 
     .para-font {
       margin: 33px 0 36px 0;
-      line-height: 2em;
-
-      @include media(laptop) {}
+      line-height: 1.985em;
 
       @include media(tablet) {
         padding: 22px;
       }
 
-      @include media(mobiles) {}
     }
 
     .btn {
-      padding: 14px 25px;
+      padding: 14px 30px;
+      @include media(tablet){
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      &:nth-child(2) {
+        margin-left: 15px;
+
+        @include media (tablet) {
+          margin-left: 0;
+        }
+      }
 
       @include media(mobiles) {
         &:nth-child(1) {
@@ -534,8 +587,8 @@ header {
 }
 
 // <!--===================  //hero section   =========================-->
-
 // <!--===================  brands section   =========================-->
+
 
 .brands {
   background: var(--white);
@@ -564,13 +617,6 @@ header {
         // height: 50px;
         width: 100%;
       }
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-      width: 50px;
-      height: 20px;
-      background-color: black;
     }
 
     .swiper-pagination-bullet {
@@ -602,48 +648,39 @@ header {
   position: relative;
   padding: 0px;
   background: var(--bg-clr);
-  display: flex;
-  align-items: center;
   height: 588px;
 
   @include media(tablet) {
     position: relative;
     height: auto;
-    padding: 30px;
+    padding: 60px 20px;
+  }
+
+  .container {
+    top: 120px;
+    position: relative;
+
+    @include media(tablet) {
+      top: 0;
+    }
   }
 
   .card {
-    top: 95px;
-    justify-content: center;
     position: relative;
-    align-items: center;
-
-    @include media(tablet) {
-      top: 30px;
-    }
 
     // card swiper 
-    .card-swiper {
+    &-swiper {
       max-width: 1170px;
       width: 100%;
       display: flex;
       justify-content: center;
       margin-top: 80px;
 
-      @include media(laptop) {
-        max-width: 992px;
-        width: 100%;
-      }
-
-
-
       .swiper-wrapper {
         max-width: 1170px;
         display: flex;
-
+        width: 100%;
         align-items: center;
-        // gap: 30px;
-        // width: 100%;
 
         @include media(tablet) {
           max-width: 992px;
@@ -653,10 +690,10 @@ header {
       }
 
       &-slider {
-        // width: 370px;
         position: relative;
         overflow: hidden;
         cursor: pointer;
+        height: 493px;
 
         &:hover img {
           scale: 1.4;
@@ -665,13 +702,17 @@ header {
 
         }
 
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%s;
+          height: 100%;
+        }
+
         &:hover h5 {
           color: var(--primary-clr);
 
-        }
-
-        img {
-          width: 100%;
         }
 
         &__content {
@@ -684,6 +725,11 @@ header {
           background: var(--white);
           color: var(--clr-black);
 
+          @include media(mobiles) {
+            width: 100%;
+            left: 0;
+          }
+
           h5 {
             text-align: center;
             margin-top: 76px;
@@ -695,7 +741,7 @@ header {
 
           .swiper-pagination_custom {
             position: absolute;
-            bottom: 22px;
+            bottom: 40px;
             display: inline-block;
             height: 8px;
             width: 8px;
@@ -707,7 +753,7 @@ header {
               content: "";
               position: absolute;
               bottom: 7px;
-              left: 6px;
+              left: 7px;
               display: inline-block;
               height: 8px;
               width: 8px;
@@ -719,8 +765,8 @@ header {
             &::before {
               content: "";
               position: absolute;
-              bottom: -7px;
-              left: -6px;
+              bottom: -8px;
+              left: -7px;
               display: inline-block;
               height: 8px;
               width: 8px;
@@ -737,20 +783,50 @@ header {
             width: 80%;
             background: var(--primary-clr);
             position: absolute;
-            bottom: 26px;
+            bottom: 43px;
             left: 10%;
           }
         }
       }
     }
 
-    .para {
-      line-height: 2.5em;
-      max-width: 973px;
+    .para-font {
+      line-height: 1.95em;
+      // max-width: 973px;
       margin: 30px 0 0 0;
 
       @include media (laptop) {
         max-width: 80%;
+      }
+    }
+
+    .swiper-container {
+      position: relative;
+      width: 100%;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      right: -23px;
+      z-index: 999;
+      padding: 22.9px 10.4px 22.1px 11.2px;
+      background-color: var(--white);
+      height: auto;
+
+      img {
+        object-fit: contain;
+      }
+    }
+
+    .swiper-button-prev {
+      left: -24px;
+      z-index: 999;
+      padding: 22.9px 10.4px 22.1px 11.2px;
+      background-color: var(--white);
+      height: auto;
+
+      img {
+        object-fit: contain;
       }
     }
 
@@ -766,7 +842,7 @@ header {
 // <!--===================  Testiomonials section   =========================-->
 
 .testimonials {
-  padding: 293px 0 0 0;
+  padding: 350px 0 0 0;
   grid-template-columns: 60% 40%;
   background: var(--white);
 
@@ -776,7 +852,7 @@ header {
 
   &__container {
     align-items: flex-start;
-    padding-bottom: 120px;
+    padding-bottom: 119px;
     border-bottom: 1px solid #E7F9F3;
     position: relative;
 
@@ -792,9 +868,54 @@ header {
 
     @include media(tablet) {
       display: flex;
+      justify-content: center;
     }
 
     &-image {
+      position: relative;
+
+      .fa-solid {
+        background: var(--primary-clr);
+        color: var(--white);
+        position: absolute;
+        padding: 9px 7.9px 9.1px 6.9px;
+
+
+      }
+
+      .fa-thumbs-up {
+        right: 139px;
+        top: -15px;
+        background: var(--yellow-clr);
+        animation: rotateIcon 2s ease-in infinite;
+        transform-origin: left bottom;
+
+        // @include media(mobiles) {
+        //   right: -10%;
+        // }
+
+      }
+
+      .fa-heart {
+        top: 50%;
+        left: -15px;
+        transform: translateY(-50%);
+        animation: changecolor 3s ease-in infinite;
+        transform-origin: right bottom;
+
+
+        &::after {
+          content: "";
+          height: 6px;
+          width: 9px;
+          background: var(--primary-clr);
+          position: absolute;
+          transform: rotate(56deg);
+          right: -5px;
+          top: 13px;
+        }
+      }
+
       @include media(tablet) {
         height: 100%;
         height: 300px;
@@ -812,6 +933,7 @@ header {
 
         @include media(tablet) {
           margin: 0;
+          width: 70%;
           top: 0;
         }
 
@@ -827,8 +949,7 @@ header {
         grid-row: 1/4;
 
         @include media(tablet) {
-          position: relative;
-          right: 0;
+          right: 30%;
         }
       }
     }
@@ -839,7 +960,7 @@ header {
     grid-column: 2/3;
     position: relative;
     z-index: 3;
-    top: 45px;
+    margin-top: 45px;
     width: 640px;
     background-color: var(--white);
     padding: 40px 0 60px 60px;
@@ -860,17 +981,23 @@ header {
     }
 
     .btn {
-      margin-top: 38px;
-      padding: 14px 25px;
+      padding: 14px 30px;
     }
 
     .yellow-bg {
       margin-right: 25px;
+
     }
 
     @include media(tablet) {
       width: 100%;
       padding: 30px;
+    }
+
+    .blue-bg {
+      @include media(mobiles) {
+        margin-top: 20px;
+      }
     }
   }
 }
@@ -884,8 +1011,8 @@ header {
   background: var(--white);
 
   &__content {
+    grid-template-columns: repeat(3, mimnax(0, 1fr));
 
-    // height: 674px;
     @include media(mobiles) {
       padding: 0 30px;
     }
@@ -902,8 +1029,8 @@ header {
     }
 
     &-bottom {
-      display: grid;
-      grid-template-columns: repeat(3, calc(100% / 3));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 30px;
 
       @include media(tablet) {
         grid-template-columns: repeat(2, 1fr);
@@ -914,11 +1041,28 @@ header {
         grid-template-columns: auto;
       }
 
+      .card-left-container {
+        grid-column: 1/3;
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+
+        @include media(tablet) {
+          grid-column: 1/4;
+        }
+
+      }
+
       .card {
         grid-column: span 1;
         border: 1px solid var(--primary-clr);
         padding: 40px;
         cursor: pointer;
+
+        @media (max-width:700px) {
+          grid-column: span 2;
+        }
 
         &:hover {
           box-shadow: 10px 20px 40px 50px rgba($color: #69eca8, $alpha: 0.1) inset;
@@ -929,21 +1073,6 @@ header {
           padding: 30px;
         }
 
-        &:nth-child(1) {
-          margin: 0 15px 15px 0;
-        }
-
-        &:nth-child(3) {
-          margin: 15px 15px 0 0;
-        }
-
-        &:nth-child(2) {
-          margin: 0 0 15px 15px;
-        }
-
-        &:nth-child(4) {
-          margin: 15px 0 0 15px;
-        }
 
         &-logo {
           text-align: center;
@@ -959,40 +1088,43 @@ header {
           }
         }
 
-        &:nth-child(1),
-        &:nth-child(2),
-        &:nth-child(3),
-        &:nth-child(4) {
-          @include media(tablet) {
-            margin: 0;
-          }
-        }
-
         .para-font {
           font-size: var(--font-sm);
           padding: 20px 0;
-          line-height: 2em;
+          line-height: 2.11em;
         }
 
-        &-right {
-          z-index: 4;
-          width: 100%;
-          position: relative;
+        &__right {
+          z-index: 1;
           grid-column: 3/4;
-          grid-row: 1/3;
-          background: #fffce4;
-          padding: 80px 40px;
-          margin-left: 30px;
-
+          position: relative;
+         
           @include media(tablet) {
-            grid-column: span 1;
-            margin: 0;
-          }
+            grid-column: 1/4;
+            width: 100%;
+            margin-top: 40px;
 
-          @include media(mobiles) {
+          }
+          &-logo {
+            position: absolute;
+            top: -61px;
+            right: -12px;
+
+            @include media(mobiles) {
+              top: -52px;
+            }
+          }
+          &-content{
             overflow: hidden;
-
-          }
+            position: relative;
+            z-index: -1;
+            width: 100%;
+            background: #fffce4;
+            padding: 80px 40px;
+            height: 100%;
+            @include media(mobiles){
+              padding: 30px 20px;
+            }
 
           h2::after {
             content: "";
@@ -1002,29 +1134,25 @@ header {
 
           h2 {
             display: block;
-            font-size: 2.125rem;
-            line-height: 1.5em;
+            font-size: 2.25rem;
+            line-height: 1.67em;
             font-weight: 400;
           }
 
           .para-font {
             margin: 23px 0 55px 0;
-            line-height: 43px;
+            line-height: 1.955em;
           }
 
-          &-logo {
-            position: absolute;
-            top: -61px;
-            right: -12px;
-
-            @include media(mobiles) {
-              top: 0;
-            }
-          }
+          
 
           .btn {
             padding: 14px 25px;
             font-size: var(--font-tiny2);
+            @media (max-width:400px) {
+              font-size: 14px;
+              padding: 14px  5px;
+            }
           }
 
           .shape__triangle {
@@ -1038,6 +1166,8 @@ header {
             bottom: 0;
             z-index: -1;
           }
+        }
+
         }
       }
     }
@@ -1055,6 +1185,7 @@ header {
 
   @include media(tablet) {
     height: auto;
+    padding-top: 60px;
   }
 
   .para-font {
@@ -1068,6 +1199,7 @@ header {
     max-width: 970px;
     position: relative;
     display: flex;
+    text-align: center;
     gap: 20px;
     align-items: center;
 
@@ -1076,7 +1208,11 @@ header {
     }
 
     .swiper-pagination-bullets {
-      bottom: 126px;
+      bottom: 100px;
+      display: flex;
+      gap: 13px;
+      align-items: center;
+      justify-content: center;
 
       @include media(tablet) {
         bottom: 80px;
@@ -1085,6 +1221,19 @@ header {
       @include media(mobiles) {
         bottom: 50px;
       }
+    }
+
+    .swiper-pagination-bullet {
+      height: 11px;
+      width: 11px;
+      margin-left: 23px;
+      background: #4D4D4D;
+
+      &-active {
+        background: var(--primary-clr);
+      }
+
+
     }
 
     &-slide {
@@ -1111,7 +1260,7 @@ header {
 
       .font-sm {
         margin: 16px 0;
-        line-height: 2em;
+        line-height: 1.78em;
 
         @include media(tablet) {
           font-size: 1rem;
@@ -1119,8 +1268,8 @@ header {
       }
 
       .signature {
-        font-size: 4rem;
-        line-height: 1em;
+        font-size: 3.5625rem;
+        line-height: 1.5em;
         margin: 30px 0;
       }
     }
@@ -1165,79 +1314,101 @@ header {
   background-repeat: no-repeat;
 
   @include media(tablet) {
-    margin-top: 20px;
+    padding-top: 60px;
   }
 
   .hl {
+    &__content {
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      background: var(--white);
+    }
+
     &__left {
-      padding: 80px 50px 86px 86px;
-      width: 800px;
+      padding: 86px 50px 87px 80px;
+      grid-column: 1/3;
+      width: 100%;
       background: var(--white);
 
       .font-sm {
         font-size: var(--font-sm);
         line-height: 1.5em;
       }
-
       @include media(tablet) {
-        width: 100%;
+        grid-column: 1/4;
         padding: 30px;
       }
-
+      h3{
+        line-height: 1.5em;
+      }
       .para-font {
-        margin: 50px 0 6px 0;
+        margin: 50px 0 50px 0;
       }
-    }
-
-    &__content {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-
-      width: 1170px;
-      background: var(--white);
-
-      @include media(laptop) {
-        // padding: 0;
-        width: 100%;
+      .font-sm{
+        line-height: 1.78em;
       }
-
-      @include media(tablet) {
-        flex-direction: column;
-        // padding: 0;
-        max-width: 992px;
-        width: 100%;
-      }
-    }
-
-    &__container {
-      justify-content: center;
-      width: 100%;
-      margin: 0 auto;
     }
 
     &__list {
       display: grid;
-      gap: 30px;
+      gap: 33px;
     }
 
     &__right {
-      width: 370px;
-      height: 664px;
+      position: relative;
+      margin-left: 20px;
+      grid-column: 3/4;
+      grid-row: 1/2;
+      padding: 96px 30px 0 30px;
+      color: var(--white);
+      text-align: center;
       background: var(--primary-clr);
+      overflow: hidden;
+      z-index: 2;
+      @include media(tablet){
+        text-align: start;
+        margin-left: 0;
+      }
+      @include media(mobiles) {
+        padding: 20px 20px;
+      }
+
+      .triangle {
+        height: 0;
+        width: 0;
+        border: 379px solid transparent;
+        border-bottom: 470px solid #2DC492;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+      }
+      &-para{
+        font-size:1.5rem ;
+        line-height: 1.875em;
+      }
+      h1 {
+        margin: 44px 0 65px 0;
+        font-size: 3.375rem;
+        line-height: 1.3em;
+
+        @include media(tablet) {
+          font-size: 40px;
+          margin: 20px 0;
+        }
+
+        @media (max-width:500px) {
+          font-size: 30px;
+
+        }
+      }
+
+      .btn {
+        padding: 14px 30px;
+      }
 
       @include media(tablet) {
-        width: 100%;
-        height: 270px;
-        max-width: 992px;
-      }
-
-      @include media(mobiles) {
-        height: 230px;
-      }
-
-      @media (max-width: 500px) {
-        display: none;
+        grid-column: 1/4;
+        padding: 20px 50px;
       }
     }
   }
@@ -1280,23 +1451,24 @@ header {
     .para-font {
       font-weight: 500;
       font-size: 1.25rem;
-      font-weight: 500;
+      font-weight: 400;
       margin: 35px 0 20px 0;
-      line-height: 1.5em;
+      line-height: 1.75em;
       font-family: var(--roboto);
     }
 
     .font-sm {
       margin-bottom: 30px;
       font-weight: 400;
-      line-height: 1.5em;
+      line-height: 1.778em;
     }
 
     .btn {
       color: var(--primary-clr);
-      font-weight: 500;
       position: relative;
       font-size: 0.875rem;
+      line-height: 2.5em;
+      letter-spacing: 100%;
       padding: 0;
 
       @include media(mobiles) {
@@ -1401,7 +1573,6 @@ header {
     &-left {
       overflow: hidden;
       grid-column: 1/2;
-      // grid-row: 1/3;
       padding-right: 80px;
 
       @include media(tablet) {
@@ -1432,13 +1603,16 @@ header {
         }
 
         .tag {
-          font-size: var(--font-tiny);
-          line-height: 2.125em;
+          font-size: 0.875rem;
+          line-height: 2.285em;
+          text-transform: uppercase;
+          font-weight: 300;
           color: var(--primary-clr);
           display: flex;
           align-items: center;
           gap: 22px;
           font-weight: 200;
+          cursor: pointer;
         }
 
         h5 {
@@ -1449,9 +1623,11 @@ header {
         }
 
         .date {
-          font-size: 14px;
+          font-size: 0.875rem;
           margin-bottom: 20px;
           line-height: 1.825em;
+          color: #656565;
+          text-transform: uppercase;
         }
 
         .image {
@@ -1464,6 +1640,9 @@ header {
         }
 
         &-right {
+          &-des{
+            line-height: 1.78em;
+          }
           .des span {
             display: none;
 
@@ -1471,12 +1650,19 @@ header {
               display: inline-block !important;
             }
           }
+          .btn{
+            line-height: 2.5em;
+            font-weight: 400;
+            letter-spacing: 100%;
+          }
         }
       }
 
       .blue-bg {
         margin-top: 30px;
         color: var(--white);
+        padding: 16px 33px;
+
       }
 
       &-loading-content {
@@ -1561,8 +1747,8 @@ header {
           }
 
           .btn {
-            display: block;
-            padding: 14px 0;
+            padding-top: 14px;
+            padding-bottom: 14px;
             width: 100%;
             margin-top: 23px;
             outline: 2px dotted var(--yellow-clr);
@@ -1604,13 +1790,22 @@ header {
           border: 434px solid transparent;
           border-bottom: 350px solid #fffad2;
         }
+        img{
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
 
         .blue-bg {
           border: unset;
+          display: inline-block;
           width: 100%;
-          padding: 12px;
+          padding: 12px 43px;
           border: 2px solid var(--pink-bg);
           outline: 1px dotted var(--primary-clr);
+          cursor: pointer;
+          position: relative;
+          z-index: 1;
         }
       }
 
@@ -1714,9 +1909,10 @@ header {
 
       img {
         cursor: pointer;
-        &:hover{
+
+        &:hover {
           transition: all .3s ease;
-          transform: rotate(20deg)  scale(1.1);
+          transform: rotate(20deg) scale(1.1);
           z-index: -1;
         }
       }
@@ -1809,7 +2005,8 @@ header {
         gap: 55px;
         font-size: var(--font-tiny);
         font-family: var(--roboto);
-        a{
+
+        a {
           text-transform: uppercase;
         }
 
@@ -1823,7 +2020,8 @@ header {
     }
 
   }
-// copyright 
+
+  // copyright 
   &__copyright {
     background: var(--white);
 
@@ -1872,4 +2070,5 @@ header {
 
   }
 }
+
 // <!-- ========================== // footer section ================= -->
